@@ -1,0 +1,44 @@
+<!-- A HTML form that shows all patients in the database. -->
+<!-- Written by Minhwa (Mina) Lee -->
+
+
+<html lang="en">
+<head>
+    <title>List of Patients</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Record of Patients</h1>
+
+<a href="/">Back to Main page</a>
+<p></p>
+<a href="/apps">View all records of currently/previously scheduled appointments</a>
+<p></p>
+<a href="/doctors">View all doctors in the hospital</a>
+<p></p>
+<a href="/symptoms">View all records of symptoms that have been treated in the hospital</a>
+<p></p>
+<a href="/add">Add a new appointment</a>
+
+<table>
+    <tr>
+        <td><b>Patient First Name</b></td>
+        <td><b>Patient Last Name </b></td>
+        <td><b>Age</b></td>
+        <td><b>Gender</b></td>
+        <td><b>Date of Birth</b></td>
+        </tr>
+{% for patient in patients %}
+    <tr>
+        <td>{{patient['FirstN']}}</td>
+        <td>{{patient['LastN']}}</td>
+        <td>{{patient['age']}}</td>
+        <td>{{patient['gender']}}</td>
+        <td>{{patient['birth']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>

@@ -1,0 +1,34 @@
+<!-- A HTML form that shows all doctors in the database. -->
+<!-- Written by Minhwa (Mina) Lee -->
+
+
+<html lang="en">
+<head>
+    <title>List of Doctors</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Record of Doctors</h1>
+
+<a href="/">Back to Main page</a>
+<p></p>
+<a href="/apps">View all records of currently/previously scheduled appointments</a>
+<p></p>
+<a href="/patients">View all records of patients registered in the hospital</a>
+<p></p>
+<a href="/symptoms">View all records of symptoms that have been treated in the hospital</a>
+<p></p>
+<a href="/add">Add a new appointment</a>
+<ol>
+    {% for doctor in doctors %}
+
+        <li><p>Name: {{doctor['doctor']}}</p></li>
+
+    {% endfor %}
+ </ol>
+
+</body>
+</html>

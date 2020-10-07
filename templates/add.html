@@ -1,0 +1,72 @@
+<!-- Additional feature: A HTML form that adds new appointment to the database. -->
+<!-- Written by Minhwa (Mina) Lee -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new appointment</title>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Add a new appointment</h1>
+
+{% if display_notice %}
+    <p>
+    {% if add_status %}
+        <span style="background-color: lightgreen;">
+    {% else %}
+        <span style="background-color: lightcoral;">
+    {% endif %}
+    {{ notice_message }}
+     </span>
+    </p>
+{% endif %}
+
+<p>
+<a href="/apps">Back to all records of appointments</a>
+</p>
+<a href="/">Back to Main page</a>
+
+<form action="/add" method="post">
+    <label for="first_name">Patient's First Name:</label>
+    <br>
+    <input type="text" id="first_name" name="first_name">
+    <br>
+    <label for="last_name">Patient's Last Name:</label>
+    <br>
+    <input type="text" id="last_name" name="last_name">
+    <br>
+    <label for="gender">Gender (Male/Female/Others):</label>
+    <br>
+    <input type="text" id="gender" name="gender">
+    <br>
+    <label for="age">Age:</label>
+    <br>
+    <input type="number" id="age" name="age">
+    <br>
+    <label for="birth">Date of Birth(YYYY-MM-DD):</label>
+    <br>
+    <input type="text" id="birth" name="birth">
+    <br>
+    <label for="doctor">First Name of Primary Doctor:</label>
+    <br>
+    <input type="text" id="doctor" name="doctor">
+    <br>
+    <label for="month">Scheduled Month (in English ex. January):</label>
+    <br>
+    <input type="text" id="month" name="month">
+    <br>
+    <label for="symptom">Symptom(s)/Diagnosed Illness:</label>
+    <br>
+    <input type="text" id="symptom" name="symptom">
+    <br>
+    <input type="submit" value="Register Appointment">
+</form>
+
+
+</body>
+</html>

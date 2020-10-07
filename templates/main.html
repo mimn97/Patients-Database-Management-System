@@ -1,0 +1,35 @@
+<!-- A HTML form that shows a main start page. -->
+<!-- Written by Minhwa (Mina) Lee -->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Management System Home Page</title>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Hospital Appointment Management System</h1>
+
+<p>Welcome to Appointment Management System! This website is mainly created for
+    healthcare providers who are in charge of scheduling appointments to this hospital.
+    Throughout this website, you can register an appointment to this hospital by online.
+    You can also view a list of currently/previously scheduled appointment records, as well as
+    a list of doctors, patients, and symptoms.
+
+    <p>If you are willing to schedule a new appointment via this website, this is the right place for you.</p>
+
+
+<a href="/apps">View all records of currently/previously scheduled appointments</a>
+<p></p>
+<a href="/patients">View all records of patients registered in the hospital database</a>
+<p></p>
+<a href="/doctors">View all doctors in the hospital</a>
+<p></p>
+<a href="/symptoms">View all records of symptoms that have been treated in the hospital</a>
+<p></p>
+<a href="/add">Add a new appointment</a>
+</body>

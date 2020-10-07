@@ -1,0 +1,53 @@
+<!-- A HTML form that shows all records of appointments in the database. -->
+<!-- Written by Minhwa (Mina) Lee -->
+
+<html>
+<title>Appointments-Management-System</title>
+<head>
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='style.css') }}">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+<h1> List of Appointments </h1>
+
+<a href="/"> Back to Main page</a>
+<p></p>
+<a href="/app_doctors">View Appointments by Primary Doctors</a>
+<p><a href="/app_months">View Appointments by Months</a></p>
+<a href="/add">Add a new appointment</a>
+
+
+<table>
+    <tr>
+        <td><b>Patient First Name</b></td>
+        <td><b>Patient Last Name </b></td>
+        <td><b>Age</b></td>
+        <td><b>Gender</b></td>
+        <td><b>Date of Birth</b></td>
+        <td><b>Doctor</b></td>
+        <td><b>Scheduled Month</b></td>
+        <td><b>Symptom/Diagnosis</b></td>
+        </tr>
+{% for app in apps %}
+    <tr>
+        <td>{{app['FirstN']}}</td>
+        <td>{{app['LastN']}}</td>
+        <td>{{app['age']}}</td>
+        <td>{{app['gender']}}</td>
+        <td>{{app['birth']}}</td>
+        <td>{{app['doctor']}}</td>
+        <td>{{app['month']}}</td>
+        <td>{{app['symptom']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
