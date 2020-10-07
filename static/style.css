@@ -1,0 +1,11 @@
+/*Written by Minhwa (Mina) Lee*/
+/* Style format for a HTML webpage*/
+
+td{
+    padding-right: 10px;
+}
+body{
+    font-family :sans-serif;
+    font-size: 20px;
+    background-color: #fefbd8
+}
